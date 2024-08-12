@@ -229,7 +229,12 @@ if __name__ == "__main__":
         print(f"Usage: {sys.argv[0]} <filename>")
         sys.exit(1)
     filename = sys.argv[1]
+    signatures=[]
+    
     for signature in get_pdf_signatures(filename):
-        json_formatted_str = json.dumps(signature.toJson(), indent=2)
-        print(json_formatted_str)
-
+        signatures.append(signature.toJson())
+        
+    json_formatted_str = json.dumps(signatures, indent=2)
+    result={ "signatures" : signatures }
+    print(json.dumps(result, indent=2))
+   
