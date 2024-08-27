@@ -70,10 +70,10 @@ class Signature(AttrClass):
         
     def toJson(self):
         return {
-            "type": signature.type,
-            "signer_name": signature.signer_name,
-            "signing_time": signature.signing_time.isoformat(),
-            "certificate": signature.certificate.toJson()
+            "type": self.type,
+            "signer_name": self.signer_name,
+            "signing_time": self.signing_time.isoformat(),
+            "certificate": self.certificate.toJson()
             }
         
 
